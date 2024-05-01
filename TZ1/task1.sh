@@ -8,6 +8,9 @@ if [ ! -d "$outputDirectory" ]; then
     mkdir -p "$outputDirectory"
 fi
 
+# Grant read and execute permissions for the input directory and its contents (if the directory and subdirectories are not empty)
+chmod -R +x "$inputDirectory"
+
 # Find files in the input directory and copy them to the output directory, checking for duplicates
 find "$inputDirectory" -type f | while read -r path; do
     filename=$(basename -- "$path")
