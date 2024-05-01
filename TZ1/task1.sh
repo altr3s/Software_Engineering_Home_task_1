@@ -31,5 +31,5 @@ find "$inputDirectory" -type f | while read -r path; do
     done
 
     # Copy the file to the target directory
-    cp "$path" "$destFilePath"
+    cp -a "$path" "$destFilePath"
 done
